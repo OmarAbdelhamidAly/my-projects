@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#recommendButton').click(function() {
+                var mode = $('#modeInput').val();
+                var topN = $('#topNInput').val();
+
+                $.get('/recommend/' + mode + '/' + topN, function(data) {
+                    var songs = data.recommended_songs;
+                    var songList = '';
+
+                    for (var i = 0; i < songs.length; i++) {
+                        songList += '<li>' + songs[i] + '</li>';
+                    }
+
+                    $('#songList').html(songList);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>API Test</h1>
+    <label for="modeInput">Mode:</label>
+    <input type="text" id="modeInput" placeholder="Enter mode value" required>
+    <br>
+    <label for="topNInput">Top N:</label>
+    <input type="number" id="topNInput" placeholder="Enter the number of songs" required>
+    <br>
+    <button id="recommendButton">Recommend</button>
+    <br>
+    <h2>Recommended Songs:</h2>
+    <ul id="songList"></ul>
+</body>
+</html>

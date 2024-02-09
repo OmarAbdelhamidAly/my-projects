@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #343a40;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Health Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="Height_(cm)">Height (cm):</label>
+                <input type="text" name="Height_(cm)" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Weight_(kg)">Weight (kg):</label>
+                <input type="text" name="Weight_(kg)" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="BMI">BMI:</label>
+                <input type="text" name="BMI" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Alcohol_Consumption">Alcohol Consumption:</label>
+                <input type="text" name="Alcohol_Consumption" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Fruit_Consumption">Fruit Consumption:</label>
+                <input type="text" name="Fruit_Consumption" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Green_Vegetables_Consumption">Green Vegetables Consumption:</label>
+                <input type="text" name="Green_Vegetables_Consumption" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="FriedPotato_Consumption">Fried Potato Consumption:</label>
+                <input type="text" name="FriedPotato_Consumption" class="form-control" required>
+            </div>
+
+            <input type="submit" value="Predict" class="btn btn-primary">
+        </form>
+    </div>
+</body>
+</html>
